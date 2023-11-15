@@ -1,27 +1,49 @@
-# React + TypeScript + Vite
+# 프로젝트 목적
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TypeScript, FireBase 및 사용해보지 않은 라이브러리들에 익숙해지자(ex Recoil, Toast 등등)
 
-Currently, two official plugins are available:
+# 프로젝트 주제
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+인스타그램의 '피드'관련 기능을 구현해보자
 
-## Expanding the ESLint configuration
+# 프로젝트 주제 선정이유
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+FireBase Storage를 이용해서 사용자들에게 받은 이미지들을 이용하고자 생각했고, 대표적인 SNS인 인스타그램을 떠올림
 
-- Configure the top-level `parserOptions` property like this:
+# 프로젝트 진행 상태(완료후 삭제)
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+60%??
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+[완료]
+
+회원가입, 로그인, 로그아웃, 메인페이지, 사이드메뉴, 피드작성, 피드조회, 검색(피드, 태그), 댓글작성, 피드좋아요, 피드저장
+
+[작업중]
+
+검색페이지에서 해당 피드 클릭시, 상세피드 팝업(20%)
+
+피드작성 팝업창 추가 반응형작업(모바일 못생김)
+
+[작업예정]
+
+메인페이지에서 스크롤이 하단에 가까워지면 다음 게시물 가져오기(scroll || IntersectionObserver)
+
+피드 수정기능
+
+프로필 페이지
+
+가입시, 사용자 네임 중복안되게(Duplication collection 생성해서 작업예상, FireBase에서는 타인의 Auth관련 지원안함)
+
+# 프로젝트 결과
+
+아직 진행중입니다
+
+# 프로젝트 하고 느낀점, 어려웠던 부분
+
+다중 이미지 처리
+
+FireBase collection구조
+
+FireBase 처음 써봐서 더 어려움
+
+TypeScript 아직도 어려운듯, 더 많이 해봐야겠음
