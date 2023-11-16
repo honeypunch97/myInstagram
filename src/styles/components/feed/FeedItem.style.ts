@@ -175,8 +175,10 @@ export const CommentSection = styled.div`
     text-align: left;
     font-size: 12px;
     cursor: pointer;
+    margin-bottom: 5px;
   }
   ul {
+    margin-bottom: 5px;
     li {
       text-align: left;
       font-size: 13px;

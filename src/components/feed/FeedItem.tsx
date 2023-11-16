@@ -122,8 +122,8 @@ const FeedItem = ({ item }: { item: TFeed }) => {
               dynamicBullets: true,
             }}
             modules={[Navigation, Pagination]}>
-            {photo.map(item => (
-              <SwiperSlide key={item}>
+            {photo.map((item, idx) => (
+              <SwiperSlide key={idx}>
                 <img src={item} alt="" loading="lazy" />
               </SwiperSlide>
             ))}
