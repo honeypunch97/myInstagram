@@ -7,6 +7,7 @@ export type TFeed = {
   text: string;
   userId: string;
   userName: string;
+  userProfileURL: string;
   save: string[];
   comment: { authorId: string; name: string; text: string; date: string }[];
 };

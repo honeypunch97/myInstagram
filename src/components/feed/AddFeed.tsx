@@ -138,6 +138,7 @@ const AddFeed = () => {
       const doc = await addDoc(collection(db, "feed"), {
         userId: user.uid,
         userName: user.displayName,
+        userProfileURL: user.photoURL,
         date: getNow(),
         text: inputTextArea,
         tag: tags,

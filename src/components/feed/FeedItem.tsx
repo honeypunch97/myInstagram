@@ -36,7 +36,7 @@ import { Link } from "react-router-dom";
 const FeedItem = ({ item }: { item: TFeed }) => {
   const [feedData, setFeedData] = useRecoilState(feedDataState);
   const user = auth.currentUser;
-  const { id, date, like, save, photo, tag, text, userId, userName, comment } = item;
+  const { id, date, like, save, photo, tag, text, userId, userName, comment, userProfileURL } = item;
   const [isMenuOn, setIsMenuOn] = useState(false);
   const [isDeleteLoading, setIsDeleteLoading] = useState(false);
   const [commentInput, setCommentInput] = useState("");
@@ -99,13 +99,17 @@ const FeedItem = ({ item }: { item: TFeed }) => {
   return (
     <Wrapper style={{ textAlign: "center" }}>
       <HeaderSection>
-        <Profile className="xi-profile"></Profile>
+        <Link to={`/search?userParam=${userName}`}>
+          <Profile src={userProfileURL} />
+        </Link>
         <Name>
           <Link to={`/search?userParam=${userName}`}>{userName}</Link>
         </Name>
-        <MenuButton title="옵션 더보기" onClick={() => setIsMenuOn(!isMenuOn)}>
-          <i className="xi-ellipsis-h"></i>
-        </MenuButton>
+        {auth.currentUser?.uid === userId && (
+          <MenuButton title="옵션 더보기" onClick={() => setIsMenuOn(!isMenuOn)}>
+            <i className="xi-ellipsis-h"></i>
+          </MenuButton>
+        )}
         {isMenuOn && (
           <MenuBox>
             <li>수정</li>

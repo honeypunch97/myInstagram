@@ -14,6 +14,9 @@ import { isAddFeedOnState, isDetailFeedOnState } from "./recoil/feed/atoms";
 import AddFeed from "./components/feed/AddFeed";
 import DetailFeed from "./components/feed/DetailFeed";
 import Search from "./routes/Search";
+import Profile from "./routes/Profile";
+import ProtectedRoute from "./components/common/ProtectedRoute";
+import ReverseProtectedRoute from "./components/common/ReverseProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -22,15 +25,31 @@ const router = createBrowserRouter([
     children: [
       { path: "", element: <Home /> },
       { path: "search", element: <Search /> },
+      {
+        path: "profile",
+        element: (
+          <ProtectedRoute>
+            <Profile />
+          </ProtectedRoute>
+        ),
+      },
     ],
   },
   {
     path: "/login",
-    element: <Login />,
+    element: (
+      <ReverseProtectedRoute>
+        <Login />
+      </ReverseProtectedRoute>
+    ),
   },
   {
     path: "/create-account",
-    element: <CreateAccount />,
+    element: (
+      <ReverseProtectedRoute>
+        <CreateAccount />
+      </ReverseProtectedRoute>
+    ),
   },
 ]);
 function App() {

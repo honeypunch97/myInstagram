@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, InfoMsg, Input, Line, Title, Wrapper } from "../styles/routes/Auth.syle";
+import { Button, Form, InfoMsg, Input, Line, Title, Wrapper } from "../styles/routes/Auth.style";
 import { toast } from "react-toastify";
 import { FirebaseError } from "firebase/app";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -36,8 +36,10 @@ const CreateAccount = () => {
 
     try {
       setIsLoading(true);
+      const defaultProfileURL =
+        "https://firebasestorage.googleapis.com/v0/b/myinstagram-dd32c.appspot.com/o/profile%2FdefaultProfile.svg?alt=media&token=df122cd0-d931-46df-b025-26db926a6c10";
       const credentials = await createUserWithEmailAndPassword(auth, inputEmail, inputPassword);
-      await updateProfile(credentials.user, { displayName: inputName });
+      await updateProfile(credentials.user, { displayName: inputName, photoURL: defaultProfileURL });
       toast.success(`회원가입 완료`);
       toast.success(`${inputName}님 환영합니다.`);
       navigate("/");

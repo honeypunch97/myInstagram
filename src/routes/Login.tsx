@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Form, InfoMsg, Input, Line, Title, Wrapper } from "../styles/routes/Auth.syle";
+import { Button, Form, InfoMsg, Input, Line, Title, Wrapper } from "../styles/routes/Auth.style";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { signInWithEmailAndPassword } from "firebase/auth";

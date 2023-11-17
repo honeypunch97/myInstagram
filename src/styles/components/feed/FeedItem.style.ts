@@ -30,10 +30,14 @@ export const HeaderSection = styled.div`
     margin-bottom: 2.0833vw;
   }
 `;
-export const Profile = styled.i`
-  font-size: 30px;
+export const Profile = styled.img`
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
   @media screen and (max-width: 480px) {
-    font-size: 6.25vw;
+    width: 8.3333vw;
+    height: 8.3333vw;
   }
 `;
 export const Name = styled.span`

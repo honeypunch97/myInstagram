@@ -31,8 +31,8 @@ const Search = () => {
       );
       const snapshot = await getDocs(feedsQuery);
       const feeds = snapshot.docs.map(doc => {
-        const { date, like, photo, tag, text, userId, userName, save, comment } = doc.data();
-        return { id: doc.id, date, like, photo, tag, text, userId, userName, save, comment };
+        const { date, like, photo, tag, text, userId, userName, save, comment, userProfileURL } = doc.data();
+        return { id: doc.id, date, like, photo, tag, text, userId, userName, save, comment, userProfileURL };
       });
       setSearchData(feeds);
     } catch (error) {
@@ -54,8 +54,8 @@ const Search = () => {
       );
       const snapshot = await getDocs(feedsQuery);
       const feeds = snapshot.docs.map(doc => {
-        const { date, like, photo, tag, text, userId, userName, save, comment } = doc.data();
-        return { id: doc.id, date, like, photo, tag, text, userId, userName, save, comment };
+        const { date, like, photo, tag, text, userId, userName, save, comment, userProfileURL } = doc.data();
+        return { id: doc.id, date, like, photo, tag, text, userId, userName, save, comment, userProfileURL };
       });
       setSearchData(feeds);
     } catch (error) {
@@ -91,7 +91,7 @@ const Search = () => {
         setSearchInput(userParam);
         await onSearchUser(userParam);
       } else if (tagParam) {
-        setSearchInput(tagParam);
+        setSearchInput(`#${tagParam}`);
         await onSearchTag(tagParam);
       }
     };

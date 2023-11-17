@@ -9,8 +9,8 @@ export const getFeeds = async (setFeedData: (feedData: TFeed[]) => void) => {
     const feedsQuery = query(collection(db, "feed"), orderBy("date", "desc"), limit(25));
     const snapshot = await getDocs(feedsQuery);
     const feeds = snapshot.docs.map(doc => {
-      const { date, like, photo, tag, text, userId, userName, save, comment } = doc.data();
-      return { id: doc.id, date, like, photo, tag, text, userId, userName, save, comment };
+      const { date, like, photo, tag, text, userId, userName, save, comment, userProfileURL } = doc.data();
+      return { id: doc.id, date, like, photo, tag, text, userId, userName, save, comment, userProfileURL };
     });
     setFeedData(feeds);
   } catch (error) {
